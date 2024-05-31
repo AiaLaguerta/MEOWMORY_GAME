@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> MEOWMORY</title>
+        <style>
+
+            @font-face { font-family: KiddosyfreeRegular-GOEag; src:url("KiddosyfreeRegular-GOEag.OTF"); }
+
+            body{
+                background-image: url("bg2.png");
+                background-repeat: no-repeat;
+                background-size: cover;
+                max-height:100vh;
+
+            }
+
+            .box{
+                display: flex;
+                justify-content: flex-start;
+            }
+
+            .box2{
+                display: flex;
+                justify-content: flex-start;
+            }
+
+            .box3{
+                display: flex;
+                justify-content: flex-start;
+            }
+            
+            .PageTitle{
+                font-size: 3em;
+                max-width: 6em;
+                color: white;
+                font-family: KiddosyfreeRegular-GOEag;
+                text-align: center;
+                padding-left: 3cm;
+                padding-top: 98px;
+            }
+
+            .Uname{
+                font-size: 3em;
+               max-width: 6em;
+                color: white;
+                font-family: KiddosyfreeRegular-GOEag;
+                text-align: center;
+                padding-left: 12%;
+
+                position: fixed;
+            }
+
+            #Login{
+                font-family: KiddosyfreeRegular-GOEag;
+                text-align: center;
+                max-width: 6em;
+                color:white;
+                margin-left: 3.5cm;
+                margin-top: 115px;
+                box-shadow: none;
+                border-color: none;
+            }
+
+            .subby{
+                font-family: KiddosyfreeRegular-GOEag;
+                background-color: beige;
+                box-shadow: none;
+            }
+
+            #username{
+                font-size: 20px;
+                background-color: beige;
+            }
+
+            input:invalid {
+                border: 1px solid red;
+            }
+
+            .playButton{
+                font-family: KiddosyfreeRegular-GOEag;
+                margin-top: 140px;
+                font-size: 90px;
+                text-align: center;
+                color: white;
+                text-decoration: none;
+                padding-left: 45%;
+
+                position: fixed;
+            }
+
+            #links a {
+                font-family: KiddosyfreeRegular-GOEag;
+                margin-top: 25px;
+                font-size: 50px;
+                padding-left: 75%;
+
+                color: white;
+                text-decoration: none;    
+
+                position: fixed;
+
+            }
+
+            
+        </style>
+    </head>
+    <body>
+
+        <div class="box">
+
+        <div>
+        <h1 class="PageTitle"> Meoww~
+            Welcome to Meowmory,</h1>
+        </div>
+        
+        <div>
+
+       <form id="Login" onsubmit="return submitForm();">
+
+        <fieldset id="Login">
+
+            <div>    
+                <label for="username">Username:</label>
+                <br>
+                <input type="text" id="username" name="username" minlength="4" maxlength="5" required>
+                <br><br>
+            </div>
+
+            <div>
+                <button type="submit" class="subby">Submit</button>
+             </div>
+
+        </fieldset>   
+
+        </form>
+
+        </div>
+
+        </div>
+
+        </div>
+
+        <div class="box2">
+        <h3 class="Uname"> </h3>
+        </div>
+
+        <div class="box3">
+
+        <br>
+        <a href = "./Webpages/main.html" target="_self" class="playButton"> PLAY </a>
+        
+        </div>
+
+        <div id="links">
+            <a href="./Webpages/Credits.html" >CREDITS</a>
+            <br>
+            <br>
+            <br>
+            <a href="./Webpages/instructions.html" >HOW TO PLAY</a>
+          </div>
+
+        <script>
+
+            function submitForm() {
+                event.preventDefault()
+                var yes = document.getElementById('username').value;
+                var usernameElement = document.getElementsByClassName("Uname")[0];
+                usernameElement.innerHTML = yes + "!";
+            }
+          </script>
+    </body>
+</html>

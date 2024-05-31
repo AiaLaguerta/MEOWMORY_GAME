@@ -1,0 +1,175 @@
+@font-face { font-family: KiddosyfreeRegular-GOEag; src:url('KiddosyfreeRegular-GOEag.otf'); }
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    min-height:100vh;
+}
+body{
+    margin:0;
+    background-image: url('bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: url('/Images/paw.jpg'), auto;
+}
+
+.goBackButton{
+    font-family: KiddosyfreeRegular-GOEag;
+    margin-top: 120%;
+    font-size: 30px;
+    text-align: left;
+    color: white;
+    text-decoration: none;
+    
+    padding-right: 50%;
+}
+.gameDetailsContainer{
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+}
+
+.gameDetails{
+    font-family:KiddosyfreeRegular-GOEag;
+    font-size: 2em;
+}
+
+.gameContainer{
+   display: grid;
+   grid-template-columns: repeat(4, auto);
+   grid-gap: 10px;
+   margin: 50px;
+   justify-content: center;
+   perspective: 500px; 
+}
+
+.card{
+    position: relative;
+    background-color: white;
+    height: 160px;
+    width: 125px;
+    border-radius: 12px;
+    border-width: 1px;
+    cursor: url('/Images/pawHover.jpg'), auto;
+}
+
+.cardFace{
+    position: absolute;
+    width: 100%;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    border-width: 1px;
+    transition: transform 500ms ease-in-out;
+}
+
+.card.visible .cardBack{
+    transform: rotateY(-180deg);
+}
+
+.card.visible .cardFront{
+    transform: rotateY(0);
+
+
+}
+
+.card.matched .card-value{
+    animation:boom 1s linear infinite 500ms
+}
+
+.overlay{
+    display: none;
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    color:white;
+    font-family:KiddosyfreeRegular-GOEag;
+    transition: background-color 500ms, font-size 500ms;
+
+}
+
+
+.clickToStart{
+    font-size: .3em;
+}
+
+.YEHEYY{
+    font-size: .3em;
+}
+
+#GameOver.visible{
+    font-size: 0;
+    display: flex;
+    flex-direction: column;
+    animation: textgrow 500ms forwards;
+}
+
+#Victory.visible{
+    font-size: 0;
+    display: flex;
+    flex-direction: column;
+    animation: textgrow 500ms forwards;
+}
+.overlay.visible {
+    display: flex;
+    flex-direction: column;
+    animation: textgrow 500ms forwards;
+}
+
+
+@keyframes textgrow {
+    from{
+        background-color: rgba(0,0,0,0);
+        font-size: 0 ;
+    }
+    to{
+        background-color: rgba(0,0,0,.9);
+        font-size: 10em;
+    }
+}
+
+@keyframes dance{
+    0%, 100%{
+        transform:scale(0);
+    }
+    25%{
+        transform:scale(20);
+    }
+    75%{
+        transform:scale(15);
+    }
+
+}
+
+
+.cardFront{
+    transform: rotateX(180deg);
+}
+
+
+.card-value {
+    transform: scale(.9);
+    transition: transform 100ms ease-in-out;
+}
+
+@media (max-width: 600px) {
+    .gameContainer {
+        grid-template-columns: repeat(2,auto);
+    }
+
+    .gameDetailsContainer{
+        flex-direction: column;
+        align-items: center;
+    }
+}
